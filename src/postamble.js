@@ -510,7 +510,7 @@ if (Module['noInitialRun']) shouldRunNow = false;
 #endif // HAS_MAIN
 
 #if USE_PTHREADS
-if (ENVIRONMENT_IS_PTHREAD)
+if (ENVIRONMENT_IS_PTHREAD) {
   // The default behaviour for pthreads is always to exit once they return
   // from their entry point (or call pthread_exit).  If we set noExitRuntime
   // to true here on pthreads they would never complete and attempt to
