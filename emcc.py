@@ -822,7 +822,8 @@ There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR P
       print(shared.shlex_join(parts[1:]))
     return 0
 
-  shared.check_sanity(force=DEBUG)
+  if os.environ.get('EMCC_SKIP_SANITY_CHECK') != '1':
+    shared.check_sanity(force=DEBUG)
 
   def get_language_mode(args):
     return_next = False
